@@ -55,7 +55,7 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center justify-center px-4 text-center overflow-hidden border-b border-brand-muted">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1500522144261-ea64433bbe27?w=800&q=80&auto=format&fit=crop')" }}
+          style={{ backgroundImage: "url('/hero.jpg')" }}
         />
         <div className="absolute inset-0 bg-black/75" />
         <div className="relative z-10 w-full">
@@ -114,10 +114,7 @@ export default function Home() {
                 <span className={item.label === 'キトゥル・トリークル' ? 'text-brand-gold font-bold' : 'text-brand-sub'}>GI {item.gi}</span>
               </div>
               <div className="w-full bg-brand-muted rounded-full h-3">
-                <div
-                  className={`${item.color} h-3 rounded-full transition-all`}
-                  style={{ width: `${item.gi}%` }}
-                />
+                <div className={`${item.color} h-3 rounded-full`} style={{ width: `${item.gi}%` }} />
               </div>
             </div>
           ))}
