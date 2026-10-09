@@ -6,10 +6,13 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          gold:  '#C8A000',
-          navy:  '#1B3A6B',
-          green: '#2d6a3f',
-          cream: '#FDF8EE',
+          gold: '#D4AF37',
+          'gold-light': '#F0D060',
+          dark: '#0D0D0D',
+          surface: '#1A1A1A',
+          muted: '#2A2A2A',
+          text: '#F0ECE3',
+          sub: '#A89B85',
         },
       },
       fontFamily: {
@@ -19,4 +22,5 @@ const config: Config = {
   },
   plugins: [],
 }
+
 export default config
