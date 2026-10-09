@@ -20,6 +20,33 @@ const PRODUCTS = [
   },
 ]
 
+const RECIPES = [
+  {
+    title: 'キトゥル・ラテ',
+    time: '3分',
+    icon: '☕',
+    steps: ['エスプレッソまたはコーヒーを淹れる', 'キトゥル・トリークルを小さじ1〜2加える', '温めたミルクを注いで完成'],
+  },
+  {
+    title: 'キトゥル・ヨーグルトボウル',
+    time: '2分',
+    icon: '🥣',
+    steps: ['プレーンヨーグルトを器に盛る', 'キトゥル・トリークルを大さじ1かける', 'お好みでフルーツやナッツをトッピング'],
+  },
+  {
+    title: 'キトゥル・パンケーキ',
+    time: '15分',
+    icon: '🥞',
+    steps: ['通常通りパンケーキを焼く', '砂糖やメープルシロップの代わりにキトゥル・トリークルをかける', 'バターと一緒にどうぞ'],
+  },
+  {
+    title: '和風ドレッシング',
+    time: '2分',
+    icon: '🥗',
+    steps: ['醤油大さじ2・酢大さじ1・キトゥル小さじ2を混ぜる', 'ごま油少々を加える', 'サラダや蒸し野菜にかけて完成'],
+  },
+]
+
 export default function Home() {
   return (
     <main className="bg-brand-dark text-brand-text">
@@ -28,9 +55,9 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center justify-center px-4 text-center overflow-hidden border-b border-brand-muted">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1654515722385-c684c5331c04?w=800&q=80&auto=format&fit=crop')" }}
+          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1500522144261-ea64433bbe27?w=800&q=80&auto=format&fit=crop')" }}
         />
-        <div className="absolute inset-0 bg-black/70" />
+        <div className="absolute inset-0 bg-black/75" />
         <div className="relative z-10 w-full">
           <p className="text-brand-gold text-[10px] tracking-[0.4em] mb-8 uppercase">Sri Lanka Organic — Since Ancient Times</p>
           <h1
@@ -65,6 +92,61 @@ export default function Home() {
               <div className="text-4xl mb-4">{f.icon}</div>
               <h3 className="font-bold text-brand-gold mb-3">{f.title}</h3>
               <p className="text-sm text-brand-sub leading-relaxed">{f.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* GI値比較 */}
+      <section className="py-20 px-6 bg-brand-dark">
+        <p className="text-center text-brand-gold text-xs tracking-widest mb-3 uppercase">Science</p>
+        <h2 className="text-center text-2xl font-serif font-bold mb-4">GI値で比べると</h2>
+        <p className="text-center text-brand-sub text-sm mb-12">セイロン医学誌（2022）掲載データに基づく</p>
+        <div className="max-w-lg mx-auto space-y-5">
+          {[
+            { label: '白砂糖', gi: 70, color: 'bg-red-800' },
+            { label: 'はちみつ', gi: 58, color: 'bg-yellow-700' },
+            { label: 'キトゥル・トリークル', gi: 35, color: 'bg-brand-gold' },
+          ].map(item => (
+            <div key={item.label}>
+              <div className="flex justify-between text-sm mb-2">
+                <span className={item.label === 'キトゥル・トリークル' ? 'text-brand-gold font-bold' : 'text-brand-sub'}>{item.label}</span>
+                <span className={item.label === 'キトゥル・トリークル' ? 'text-brand-gold font-bold' : 'text-brand-sub'}>GI {item.gi}</span>
+              </div>
+              <div className="w-full bg-brand-muted rounded-full h-3">
+                <div
+                  className={`${item.color} h-3 rounded-full transition-all`}
+                  style={{ width: `${item.gi}%` }}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+        <p className="text-center text-xs text-brand-sub mt-8">GI値35 = 低GI食品（55以下が低GI）<br />出典：Ceylon Medical Journal Vol.67, 2022</p>
+      </section>
+
+      {/* レシピ */}
+      <section className="py-20 px-6 bg-brand-surface">
+        <p className="text-center text-brand-gold text-xs tracking-widest mb-3 uppercase">Recipes</p>
+        <h2 className="text-center text-2xl font-serif font-bold mb-12">かんたんレシピ</h2>
+        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
+          {RECIPES.map(r => (
+            <div key={r.title} className="bg-brand-dark border border-brand-muted rounded-2xl p-6 hover:border-brand-gold transition-colors duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-3xl">{r.icon}</span>
+                <div>
+                  <h3 className="font-serif font-bold text-lg">{r.title}</h3>
+                  <span className="text-xs text-brand-gold">⏱ {r.time}</span>
+                </div>
+              </div>
+              <ol className="space-y-2">
+                {r.steps.map((s, i) => (
+                  <li key={i} className="flex gap-3 text-sm text-brand-sub">
+                    <span className="text-brand-gold font-bold shrink-0">{i + 1}.</span>
+                    <span>{s}</span>
+                  </li>
+                ))}
+              </ol>
             </div>
           ))}
         </div>
@@ -108,7 +190,7 @@ export default function Home() {
         <h2 className="text-center text-2xl font-serif font-bold mb-10">よくある質問</h2>
         <div className="max-w-2xl mx-auto space-y-3">
           {[
-            { q: '砂糖との違いは？', a: '白砂糖はGI値70前後ですが、キトゥル・トリークルはGI値が低く、血糖値の急上昇を抑えます。またミネラル・鉄分なども含まれています。' },
+            { q: '砂糖との違いは？', a: 'GI値が白砂糖の約半分（35 vs 70）。血糖値の急上昇を抑え、食物繊維も含まれています。セイロン医学誌（2022）の研究でも低GI食品として分類されています。' },
             { q: '賞味期限はどのくらいですか？', a: '未開封で製造から2年です。開封後は冷蔵庫で保管し、3ヶ月を目安にお使いください。' },
             { q: '糖尿病の薬を飲んでいますが大丈夫ですか？', a: '低GI食品ですが、医療用途の代替品ではありません。主治医にご相談の上お使いください。' },
             { q: '業務用はどこに相談すればいいですか？', a: 'ページ下部のお問い合わせフォームよりご連絡ください。サンプルもご用意しています。' },
