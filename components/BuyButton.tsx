@@ -33,7 +33,7 @@ export default function BuyButton({ priceId, label = '購入する' }: { priceId
     <button
       onClick={handleClick}
       disabled={loading}
-      className="w-full bg-brand-gold text-brand-navy font-bold py-3 rounded-full hover:brightness-110 disabled:opacity-50 transition"
+      className="w-full bg-brand-gold text-brand-dark font-bold py-3 rounded-full hover:bg-brand-gold-light disabled:opacity-40 transition-all duration-300 tracking-wider"
     >
       {loading ? '処理中...' : label}
     </button>
