@@ -26,29 +26,28 @@ export default function Home() {
 
       {/* Hero */}
       <section className="relative min-h-screen flex items-center justify-center px-6 text-center overflow-hidden border-b border-brand-muted">
-  <div className="absolute inset-0 bg-gradient-to-b from-[#1a1500] via-brand-dark to-brand-dark" />
-  <div className="relative z-10 max-w-sm mx-auto">
-    <p className="text-brand-gold text-[10px] tracking-[0.4em] mb-8 uppercase">Sri Lanka Organic — Since Ancient Times</p>
-    <h1 className="font-serif text-5xl font-bold mb-5 leading-snug whitespace-nowrap">
-      キトゥル・トリークル
-    </h1>
-    <div className="w-12 h-px bg-brand-gold mx-auto my-6" />
-    <p className="text-base text-brand-sub mb-2 tracking-wide">スリランカ産 100%天然 低GIシロップ</p>
-    <p className="text-brand-sub text-sm mb-12 tracking-wide">砂糖の代わりに。血糖値が気になる方へ。</p>
-    <a
-      href="#products"
-      className="inline-block border border-brand-gold text-brand-gold font-bold px-10 py-3 rounded-full hover:bg-brand-gold hover:text-brand-dark transition-all duration-300 tracking-widest text-sm"
-    >
-      商品を見る →
-    </a>
-  </div>
-</section>
-
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1a1500] via-brand-dark to-brand-dark" />
+        <div className="relative z-10 w-full max-w-xs mx-auto">
+          <p className="text-brand-gold text-[10px] tracking-[0.4em] mb-8 uppercase">Sri Lanka Organic — Since Ancient Times</p>
+          <h1 className="font-serif font-bold mb-5" style={{ fontSize: 'clamp(1.8rem, 8vw, 3rem)', whiteSpace: 'nowrap' }}>
+            キトゥル・トリークル
+          </h1>
+          <div className="w-12 h-px bg-brand-gold mx-auto my-6" />
+          <p className="text-base text-brand-sub mb-2 tracking-wide">スリランカ産 100%天然 低GIシロップ</p>
+          <p className="text-brand-sub text-sm mb-12 tracking-wide">砂糖の代わりに。血糖値が気になる方へ。</p>
+          <a
+            href="#products"
+            className="inline-block border border-brand-gold text-brand-gold font-bold px-10 py-3 rounded-full hover:bg-brand-gold hover:text-brand-dark transition-all duration-300 tracking-widest text-sm"
+          >
+            商品を見る →
+          </a>
+        </div>
+      </section>
 
       {/* 特徴 */}
       <section className="py-20 px-6 bg-brand-surface">
         <p className="text-center text-brand-gold text-xs tracking-widest mb-3 uppercase">Features</p>
-        <h2 className="text-center text-2xl font-bold mb-12">キトゥル・トリークルとは</h2>
+        <h2 className="text-center text-2xl font-serif font-bold mb-12">キトゥル・トリークルとは</h2>
         <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-6">
           {[
             { icon: '🌴', title: '100%天然・無添加', body: 'スリランカのキトゥルヤシの樹液を煮詰めただけ。着色料・保存料・砂糖の添加は一切なし。' },
@@ -67,7 +66,7 @@ export default function Home() {
       {/* おすすめの使い方 */}
       <section className="py-16 px-6 bg-brand-dark border-y border-brand-muted">
         <p className="text-center text-brand-gold text-xs tracking-widest mb-3 uppercase">How to Use</p>
-        <h2 className="text-center text-2xl font-bold mb-10">こんな使い方がおすすめ</h2>
+        <h2 className="text-center text-2xl font-serif font-bold mb-10">こんな使い方がおすすめ</h2>
         <div className="max-w-3xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
           {['☕ コーヒー・紅茶に', '🥣 ヨーグルトに', '🥞 パンケーキに', '🍳 料理の隠し味に'].map(u => (
             <div key={u} className="bg-brand-surface rounded-xl py-5 px-3 text-sm font-medium text-brand-gold border border-brand-muted hover:border-brand-gold transition-colors duration-300">{u}</div>
@@ -78,12 +77,12 @@ export default function Home() {
       {/* 商品 */}
       <section id="products" className="py-20 px-6 bg-brand-surface">
         <p className="text-center text-brand-gold text-xs tracking-widest mb-3 uppercase">Products</p>
-        <h2 className="text-center text-2xl font-bold mb-12">商品ラインナップ</h2>
+        <h2 className="text-center text-2xl font-serif font-bold mb-12">商品ラインナップ</h2>
         <div className="max-w-3xl mx-auto grid md:grid-cols-2 gap-8">
           {PRODUCTS.map(p => (
             <div key={p.id} className="bg-brand-dark border border-brand-muted rounded-2xl p-8 flex flex-col gap-5 hover:border-brand-gold transition-colors duration-300">
               <span className="text-xs border border-brand-gold text-brand-gold px-3 py-1 rounded-full self-start tracking-wider">{p.tag}</span>
-              <h3 className="text-xl font-bold">{p.name}</h3>
+              <h3 className="text-xl font-serif font-bold">{p.name}</h3>
               <p className="text-sm text-brand-sub leading-relaxed">{p.desc}</p>
               <p className="text-3xl font-bold text-brand-gold">
                 ¥{p.price.toLocaleString()}
@@ -99,7 +98,7 @@ export default function Home() {
       {/* FAQ */}
       <section className="py-16 px-6 bg-brand-dark">
         <p className="text-center text-brand-gold text-xs tracking-widest mb-3 uppercase">FAQ</p>
-        <h2 className="text-center text-2xl font-bold mb-10">よくある質問</h2>
+        <h2 className="text-center text-2xl font-serif font-bold mb-10">よくある質問</h2>
         <div className="max-w-2xl mx-auto space-y-3">
           {[
             { q: '砂糖との違いは？', a: '白砂糖はGI値70前後ですが、キトゥル・トリークルはGI値が低く、血糖値の急上昇を抑えます。またミネラル・鉄分なども含まれています。' },
@@ -121,7 +120,7 @@ export default function Home() {
       {/* お問い合わせ */}
       <section className="py-16 px-6 bg-brand-surface text-center border-t border-brand-muted">
         <p className="text-brand-gold text-xs tracking-widest mb-3 uppercase">Contact</p>
-        <h2 className="text-2xl font-bold mb-3">お問い合わせ</h2>
+        <h2 className="text-2xl font-serif font-bold mb-3">お問い合わせ</h2>
         <p className="text-sm text-brand-sub mb-8">業務用・サンプルのご依頼・ご質問はこちらから</p>
         <a
           href="mailto:info@alljapan.co.jp"
@@ -133,7 +132,7 @@ export default function Home() {
 
       {/* フッター */}
       <footer className="bg-brand-dark border-t border-brand-muted text-brand-sub text-xs text-center py-8 px-4">
-        <p className="text-brand-gold font-bold tracking-widest text-sm mb-2">KITHUL TREACLE</p>
+        <p className="font-serif text-brand-gold tracking-widest text-sm mb-2">KITHUL TREACLE</p>
         <p>© 2026 All Japan Co., Ltd. — スリランカ産キトゥル・トリークル 輸入販売</p>
         <p className="mt-1">特定商取引法に基づく表記 / プライバシーポリシー</p>
       </footer>
