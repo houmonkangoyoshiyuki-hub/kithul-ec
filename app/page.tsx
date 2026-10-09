@@ -55,7 +55,7 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center justify-center px-4 text-center overflow-hidden border-b border-brand-muted">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/hero.jpg')" }}
+          style={{ backgroundImage: "url('/IMG_5158.jpeg')" }}
         />
         <div className="absolute inset-0 bg-black/75" />
         <div className="relative z-10 w-full">
