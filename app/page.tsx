@@ -29,9 +29,11 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#1a1500] via-brand-dark to-brand-dark" />
         <div className="relative z-10 w-full max-w-xs mx-auto">
           <p className="text-brand-gold text-[10px] tracking-[0.4em] mb-8 uppercase">Sri Lanka Organic — Since Ancient Times</p>
-          <h1 className="font-serif font-bold mb-5" style={{ fontSize: 'clamp(1.8rem, 8vw, 3rem)', whiteSpace: 'nowrap' }}>
-            キトゥル・トリークル
-          </h1>
+          <h1 className="font-serif font-bold mb-5 leading-snug">
+  <span className="block" style={{ fontSize: 'clamp(2rem, 9vw, 3.5rem)' }}>キトゥル・</span>
+  <span className="block" style={{ fontSize: 'clamp(2rem, 9vw, 3.5rem)' }}>トリークル</span>
+</h1>
+
           <div className="w-12 h-px bg-brand-gold mx-auto my-6" />
           <p className="text-base text-brand-sub mb-2 tracking-wide">スリランカ産 100%天然 低GIシロップ</p>
           <p className="text-brand-sub text-sm mb-12 tracking-wide">砂糖の代わりに。血糖値が気になる方へ。</p>
