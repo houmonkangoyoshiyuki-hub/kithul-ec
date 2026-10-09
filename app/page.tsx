@@ -25,32 +25,37 @@ export default function Home() {
     <main className="bg-brand-dark text-brand-text">
 
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center justify-center px-4 text-center overflow-hidden border-b border-brand-muted">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1a1500] via-brand-dark to-brand-dark" />
-        <div className="relative z-10 w-full">
-          <p className="text-brand-gold text-[10px] tracking-[0.4em] mb-8 uppercase">Sri Lanka Organic — Since Ancient Times</p>
-          <h1
-            className="font-serif font-bold mb-5"
-            style={{
-              fontSize: '7.5vw',
-              whiteSpace: 'nowrap',
-              letterSpacing: '0.05em',
-              lineHeight: 1.2,
-            }}
-          >
-            キトゥル・トリークル
-          </h1>
-          <div className="w-12 h-px bg-brand-gold mx-auto my-6" />
-          <p className="text-base text-brand-sub mb-2 tracking-wide">スリランカ産 100%天然 低GIシロップ</p>
-          <p className="text-brand-sub text-sm mb-12 tracking-wide">砂糖の代わりに。血糖値が気になる方へ。</p>
-          <a
-            href="#products"
-            className="inline-block border border-brand-gold text-brand-gold font-bold px-10 py-3 rounded-full hover:bg-brand-gold hover:text-brand-dark transition-all duration-300 tracking-widest text-sm"
-          >
-            商品を見る →
-          </a>
-        </div>
-      </section>
+<section className="relative min-h-screen flex items-center justify-center px-4 text-center overflow-hidden border-b border-brand-muted">
+  <div
+    className="absolute inset-0 bg-cover bg-center"
+    style={{ backgroundImage: "url('https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=800&q=80')" }}
+  />
+  <div className="absolute inset-0 bg-black/70" />
+  <div className="relative z-10 w-full">
+    <p className="text-brand-gold text-[10px] tracking-[0.4em] mb-8 uppercase">Sri Lanka Organic — Since Ancient Times</p>
+    <h1
+      className="font-serif font-bold mb-5"
+      style={{
+        fontSize: '7.5vw',
+        whiteSpace: 'nowrap',
+        letterSpacing: '0.05em',
+        lineHeight: 1.2,
+      }}
+    >
+      キトゥル・トリークル
+    </h1>
+    <div className="w-12 h-px bg-brand-gold mx-auto my-6" />
+    <p className="text-base text-brand-sub mb-2 tracking-wide">スリランカ産 100%天然 低GIシロップ</p>
+    <p className="text-brand-sub text-sm mb-12 tracking-wide">砂糖の代わりに。血糖値が気になる方へ。</p>
+    <a
+      href="#products"
+      className="inline-block border border-brand-gold text-brand-gold font-bold px-10 py-3 rounded-full hover:bg-brand-gold hover:text-brand-dark transition-all duration-300 tracking-widest text-sm"
+    >
+      商品を見る →
+    </a>
+  </div>
+</section>
+
 
       {/* 特徴 */}
       <section className="py-20 px-6 bg-brand-surface">
